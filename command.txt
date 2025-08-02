@@ -1,1 +1,1 @@
-delete the file /Users/praktikant/Desktop/test/test.txt
+rename the file /Users/praktikant/Desktop/test/test.txt to /Users/praktikant/Desktop/test/text.txt
