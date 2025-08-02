@@ -11,7 +11,7 @@ const fs = require('fs/promises');
     async function createFile(path) {
         try {
             // check whether or not we already have the file
-            let existingFileHandle = await fs.open(path, 'r');
+            const existingFileHandle = await fs.open(path, 'r');
             existingFileHandle.close();
             // the file already exists...
             return console.log(`The file ${path} already exists.`);
