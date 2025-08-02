@@ -73,11 +73,11 @@ const fs = require('fs/promises');
         const buff = Buffer.alloc(size);
         // The location at which we want to start filling the buffer
         const offset = 0;
-        // how many bytes we wan tto read
+        // How many bytes we wan tto read
         const length = buff.byteLength;
-        // the position that we want to start reading the file from
+        // The position that we want to start reading the file from
         const position = 0;
-        // we always want to read the whole content (from beginning all the way to the end)
+        // Read the whole content
         await commandFileHandler.read(buff, offset, length, position);
 
         const command = buff.toString('utf-8');
