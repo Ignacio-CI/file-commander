@@ -1,6 +1,6 @@
 const fs = require('fs/promises');
 
-(async () => {
+(async function app() {
     // commands
     const CREATE_FILE = 'create a file';
     const DELETE_FILE = 'delete the file';
@@ -49,9 +49,19 @@ const fs = require('fs/promises');
         }
     }
 
+    let addedContent;
+
     async function addToFile(path, content) {
-        console.log(`Adding to ${path}...`);
-        console.log(`Content: ${content}`);
+        if (addedContent == content) return;
+
+        try {
+            const fileHandle = await fs.open(path, 'a');
+            await fileHandle.write(content + ' ');
+            addedContent = content;
+            console.log(`${content} was successfully added to the file.`);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     const commandFileHandler = await fs.open('./command.txt', 'r');
@@ -97,9 +107,9 @@ const fs = require('fs/promises');
         // add to file
         // add to the file <path> this content: <content>
         if (command.includes(ADD_TO_FILE)) {
-            const _idx = command.indexOf(' thi content: ');
+            const _idx = command.indexOf(' this content: ');
             const filePath = command.substring(ADD_TO_FILE.length + 1, _idx);
-            const content = command.substring(_idx);
+            const content = command.substring(_idx + 15);
 
             addToFile(filePath, content);
         }

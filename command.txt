@@ -1,1 +1,1 @@
-rename the file /Users/praktikant/Desktop/test/test.txt to /Users/praktikant/Desktop/test/text.txt
+add to the file /Users/praktikant/Desktop/test/text.txt this content: Mastering Node.js.
