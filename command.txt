@@ -1,1 +1,0 @@
-add to the file /Users/praktikant/Desktop/test/text.txt this content: Mastering Node.js.
